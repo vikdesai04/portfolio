@@ -1,0 +1,145 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+  cursor: none;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Firawdawdawdadawdada Sans, Droid Sans, Helvetica Neue, sans-serif;
+  cursor: none;
+  overflow: hidden;
+  background: white;
+}
+
+body {
+  position:relative
+}
+
+a {
+  text-decoration: none;
+}
+
+.backgroundting {
+  background-color: #004500;
+}
+
+.blend {
+  mix-blend-mode: difference;
+  color: white;
+}
+
+.redtext {
+  color: #FF213D;
+  z-index: 50;
+  mix-blend-mode:hard-light
+}
+
+/*background-image: linear-gradient(45deg, #fa1818, #fea013);*/
+.gradient {
+  background-image: linear-gradient(45deg, #fa1818, #fea013);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.cursor {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  position: absolute;
+  transform: translate(-50%,-50%);
+  pointer-events: none;
+  transition: all 0.3s ease;
+  transition-property: background, transform;
+}
+
+.cursor.active {
+  animation: pulse 0.2s 2 ease-out;
+}
+
+@keyframes pulse {
+  0%   {scale: 1}
+  50% {scale: 0.6}
+  100%   {scale: 1}
+}
+
+.toggler {
+  position: absolute;
+  background-color: black;
+  top: 50px;
+  right: 50px;
+  width: 20px;
+  height: 20px;
+  border-color: white;
+  border-radius: 50%;
+  transition: 1000ms;
+  z-index: 50;
+}
+
+.toggler.active {
+  background-color: white;
+  transition: 1000ms;
+}
+
+.container {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 50px;
+  right: 50px;
+  width: 20px;
+  height: 20px;
+}
+
+.darkmode {
+  position: relative;
+  transform: scale(0);
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 250vw;
+  height: 250vw;
+  border-radius: 50%;
+  background-color: #161616;
+  transition: 1000ms ease-in-out;
+  display: flex;
+  flex: 0 0 auto;
+}
+
+.darkmode.active {
+  position: relative;
+  transform: scale(1);
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 250vw;
+  height: 250vw;
+  border-radius: 50%;
+  background-color: #161616;
+  transition: 1000ms ease-in-out;
+  display: flex;
+  flex: 0 0 auto;
+}
+
+@media screen and (max-width: 600px) {
+  .darkmode {
+    height: 250vh;
+    width: 250vh;
+  }
+
+  .darkmode.active {
+    height: 250vh;
+    width: 250vh;
+  }
+}
